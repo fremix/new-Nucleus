@@ -36,10 +36,16 @@ img {
     max-width: 100%;
     display: block;
 }
-.contenedor {
+
+[class$="__contenedor"] { /* Selector de atributo*/
     max-width: 120rem;
     margin: 0 auto;
     width: 90%;
+}
+
+[class$="__heading"] {
+    text-align: center;
+    margin-bottom: 5rem;
 }
 
 .header {
@@ -66,13 +72,6 @@ img {
         background-size: 105rem;
     }
 }
-
-.header__contenedor {
-    max-width: 120rem;
-    margin: 0 auto;
-    width: 90%;
-}
-
 @media (min-width: 768px) { 
     .header__barra {	
         display: flex;
@@ -96,7 +95,6 @@ img {
 }
 
 .header__heading {
-    text-align: center;
     font-size: 3rem;
 }
 @media (min-width: 768px) { 
@@ -113,6 +111,7 @@ img {
         margin: 0 auto;
     }
 }
+
 .header__boton {
     background-color: var(--primario);
     display: block;
@@ -127,8 +126,6 @@ img {
         display: inline-block; /* NO se encima */
     }
 }
-
-
 
 .navegacion {
     display: flex;
@@ -150,3 +147,85 @@ img {
         color: var(--blanco);
     }
 }
+
+.nucleus {
+    margin-top: 3rem;
+}
+
+.nucleus__grid {
+    display: flex;
+    flex-direction: column-reverse;
+
+}
+@media (min-width: 768px) { 
+    .nucleus__grid {	
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        column-gap: 5rem;
+        align-items: center;
+    }
+}
+.listado {
+
+}
+.listado__elemento {
+    background-color: var(--blanco);
+    box-shadow: 0px 0px 15px 3px rgb(0 0 0 / .15);
+    padding: 2rem;
+    margin-bottom: 5rem;
+    transition-property: transform; /** Efecto*/
+    transition-duration: 300ms; /** Duracion del efecto*/
+}
+.listado__elemento:hover {
+    transform: scale(1.1); /** Efecto*/
+}
+.listado__heading {
+    font-size: 3rem;
+    color: var(--primario);
+    margin: 0;
+}
+.listado__texto {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.seguridad {
+   background-color: var(--primario);
+   padding: 20rem 0;
+   position: relative;
+   margin: 10rem 0;
+   overflow: hidden;
+}
+.seguridad::before,
+.seguridad::after {
+    background-color: var(--blanco);
+    content: '';
+    height: 20rem;
+    width: 120%;
+    position: absolute;
+}
+.seguridad::before {
+    top: -10rem;
+    left: 0;
+    transform: rotate(3deg);
+}
+
+.seguridad::after {
+    bottom: -10rem;
+    left: 0;
+    transform: rotate(-3deg);
+}
+
+.seguridad__heading {
+    color: var(--blanco);
+}
+@media (min-width: 768px) { 
+    .seguridad__grid {	
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 5rem;
+        align-items: center;
+    }
+}
+
+/* Iniciando video 189 */
